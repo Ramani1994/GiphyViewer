@@ -64,12 +64,8 @@ static NSString * const reuseIdentifier = @"GIFViewerCell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    cell.urlString = [self.imageURLs objectAtIndex:indexPath.row];
     
-    NSString *urlString = [self.imageURLs objectAtIndex:indexPath.row];
-    NSURL *url = [NSURL URLWithString:urlString];
-    NSData *imageData = [[NSData alloc] initWithContentsOfURL:url];
-    
-    cell.imageView.image = [UIImage imageWithData:imageData];
     return cell;
 }
 
