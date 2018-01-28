@@ -7,6 +7,7 @@
 //
 
 #import "CollectionViewController.h"
+#import "CollectionViewCell.h"
 
 @interface CollectionViewController ()
 
@@ -33,8 +34,7 @@ static NSString * const reuseIdentifier = @"GIFViewerCell";
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 
@@ -44,7 +44,7 @@ static NSString * const reuseIdentifier = @"GIFViewerCell";
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     // Configure the cell
     
