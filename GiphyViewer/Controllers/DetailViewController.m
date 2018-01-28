@@ -38,7 +38,12 @@
 }
 
 - (void)dismiss {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [UIView animateWithDuration:0.75 animations:^{
+        self.view.transform = CGAffineTransformMakeScale(0.01, 0.01);
+        self.view.alpha = 0.0;
+    } completion:^(BOOL finished) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
 }
 
 @end
