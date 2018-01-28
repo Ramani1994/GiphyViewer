@@ -32,6 +32,10 @@ static NSString * const reuseIdentifier = @"GIFViewerCell";
         NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
         
         self.imageURLs = [dictionary valueForKeyPath:@"data.images.downsized_still.url"];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.collectionView reloadData];
+        });
     }];
     
     [task resume];
@@ -55,15 +59,17 @@ static NSString * const reuseIdentifier = @"GIFViewerCell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of items
-    return 0;
+    return [self.imageURLs count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
-    // Configure the cell
+    NSString *urlString = [self.imageURLs objectAtIndex:indexPath.row];
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSData *imageData = [[NSData alloc] initWithContentsOfURL:url];
     
+    cell.imageView.image = [UIImage imageWithData:imageData];
     return cell;
 }
 
