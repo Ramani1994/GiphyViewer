@@ -8,9 +8,10 @@
 
 #import "CollectionViewController.h"
 #import "CollectionViewCell.h"
+#import "Giphy.h"
 
 @interface CollectionViewController ()
-@property (nonatomic, strong) NSArray *imageURLs;
+@property (nonatomic, strong) NSMutableArray *giphys;
 @end
 
 @implementation CollectionViewController
@@ -24,6 +25,8 @@ static NSString * const reuseIdentifier = @"GIFViewerCell";
 }
 
 - (void) refreshImages {
+    self.giphys = [NSMutableArray array];
+    
     NSURLSession *session = [NSURLSession sharedSession];
     NSURL *url = [NSURL URLWithString:@"https://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC&rating=pg"];
     
@@ -31,7 +34,11 @@ static NSString * const reuseIdentifier = @"GIFViewerCell";
         NSData *data = [[NSData alloc] initWithContentsOfURL:location];
         NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
         
-        self.imageURLs = [dictionary valueForKeyPath:@"data.images.downsized_still.url"];
+        NSArray *dictionaries = [dictionary valueForKey:@"data"];
+        for (NSDictionary *dict in dictionaries) {
+            Giphy *giphy = [Giphy giphyWithDictionary:dict];
+            [self.giphys addObject:giphy];
+        }
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.collectionView reloadData];
@@ -59,12 +66,12 @@ static NSString * const reuseIdentifier = @"GIFViewerCell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [self.imageURLs count];
+    return [self.giphys count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    cell.urlString = [self.imageURLs objectAtIndex:indexPath.row];
+    cell.giphy = [self.giphys objectAtIndex:indexPath.row];
     
     return cell;
 }

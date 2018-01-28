@@ -14,6 +14,7 @@
 		4A649E5D201E612D00DE0488 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A649E5C201E612D00DE0488 /* main.m */; };
 		4AC7BCB6201E6241006EBBAA /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC7BCB5201E6241006EBBAA /* CollectionViewController.m */; };
 		4AC7BCB9201E6430006EBBAA /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC7BCB8201E6430006EBBAA /* CollectionViewCell.m */; };
+		4AC7BCBC201E87A2006EBBAA /* Giphy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC7BCBB201E87A2006EBBAA /* Giphy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		4AC7BCB5201E6241006EBBAA /* CollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
 		4AC7BCB7201E6430006EBBAA /* CollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		4AC7BCB8201E6430006EBBAA /* CollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		4AC7BCBA201E87A2006EBBAA /* Giphy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Giphy.h; sourceTree = "<group>"; };
+		4AC7BCBB201E87A2006EBBAA /* Giphy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Giphy.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,12 +64,12 @@
 		4A649E4C201E612D00DE0488 /* GiphyViewer */ = {
 			isa = PBXGroup;
 			children = (
+				4AC7BCBD201E887E006EBBAA /* Models */,
+				4AC7BCBE201E888D006EBBAA /* Views */,
 				4A649E4D201E612D00DE0488 /* AppDelegate.h */,
 				4A649E4E201E612D00DE0488 /* AppDelegate.m */,
 				4AC7BCB4201E6241006EBBAA /* CollectionViewController.h */,
 				4AC7BCB5201E6241006EBBAA /* CollectionViewController.m */,
-				4AC7BCB7201E6430006EBBAA /* CollectionViewCell.h */,
-				4AC7BCB8201E6430006EBBAA /* CollectionViewCell.m */,
 				4A649E53201E612D00DE0488 /* Main.storyboard */,
 				4A649E56201E612D00DE0488 /* Assets.xcassets */,
 				4A649E58201E612D00DE0488 /* LaunchScreen.storyboard */,
@@ -74,6 +77,24 @@
 				4A649E5C201E612D00DE0488 /* main.m */,
 			);
 			path = GiphyViewer;
+			sourceTree = "<group>";
+		};
+		4AC7BCBD201E887E006EBBAA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4AC7BCBA201E87A2006EBBAA /* Giphy.h */,
+				4AC7BCBB201E87A2006EBBAA /* Giphy.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4AC7BCBE201E888D006EBBAA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4AC7BCB7201E6430006EBBAA /* CollectionViewCell.h */,
+				4AC7BCB8201E6430006EBBAA /* CollectionViewCell.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +170,7 @@
 			files = (
 				4A649E5D201E612D00DE0488 /* main.m in Sources */,
 				4A649E4F201E612D00DE0488 /* AppDelegate.m in Sources */,
+				4AC7BCBC201E87A2006EBBAA /* Giphy.m in Sources */,
 				4AC7BCB9201E6430006EBBAA /* CollectionViewCell.m in Sources */,
 				4AC7BCB6201E6241006EBBAA /* CollectionViewController.m in Sources */,
 			);
