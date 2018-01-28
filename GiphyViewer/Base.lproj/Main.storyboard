@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -44,6 +45,7 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="imageView" destination="nt1-Zp-Eov" id="Ay4-wh-X9L"/>
+                                    <segue destination="1cV-FL-Ari" kind="showDetail" identifier="showDetail" id="2nR-z7-kMd"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -56,6 +58,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rkj-ey-avJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="132" y="109"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="nM2-2Y-AlK">
+            <objects>
+                <viewController id="1cV-FL-Ari" customClass="DetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IeH-tm-m20">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tXk-OX-H6k">
+                                <rect key="frame" x="10" y="133" width="355" height="400"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="GJK-0r-zBM"/>
+                                </constraints>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="tXk-OX-H6k" firstAttribute="centerY" secondItem="IeH-tm-m20" secondAttribute="centerY" id="Rs7-0Z-4lW"/>
+                            <constraint firstItem="tXk-OX-H6k" firstAttribute="leading" secondItem="4YV-o7-8rs" secondAttribute="leading" constant="10" id="UBv-lJ-fuc"/>
+                            <constraint firstItem="4YV-o7-8rs" firstAttribute="trailing" secondItem="tXk-OX-H6k" secondAttribute="trailing" constant="10" id="Y0x-O7-OzA"/>
+                            <constraint firstItem="tXk-OX-H6k" firstAttribute="centerX" secondItem="IeH-tm-m20" secondAttribute="centerX" id="wHk-xi-mTm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4YV-o7-8rs"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="tXk-OX-H6k" id="6lm-G3-8Mk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g1w-Uv-DQl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="804" y="108"/>
         </scene>
     </scenes>
 </document>

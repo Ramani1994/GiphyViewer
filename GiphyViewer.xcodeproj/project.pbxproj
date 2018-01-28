@@ -15,6 +15,7 @@
 		4AC7BCB6201E6241006EBBAA /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC7BCB5201E6241006EBBAA /* CollectionViewController.m */; };
 		4AC7BCB9201E6430006EBBAA /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC7BCB8201E6430006EBBAA /* CollectionViewCell.m */; };
 		4AC7BCBC201E87A2006EBBAA /* Giphy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC7BCBB201E87A2006EBBAA /* Giphy.m */; };
+		4AC7BCC2201E921C006EBBAA /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC7BCC1201E921C006EBBAA /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		4AC7BCB8201E6430006EBBAA /* CollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 		4AC7BCBA201E87A2006EBBAA /* Giphy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Giphy.h; sourceTree = "<group>"; };
 		4AC7BCBB201E87A2006EBBAA /* Giphy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Giphy.m; sourceTree = "<group>"; };
+		4AC7BCC0201E921C006EBBAA /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		4AC7BCC1201E921C006EBBAA /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,10 +69,9 @@
 			children = (
 				4AC7BCBD201E887E006EBBAA /* Models */,
 				4AC7BCBE201E888D006EBBAA /* Views */,
+				4AC7BCBF201E915E006EBBAA /* Controllers */,
 				4A649E4D201E612D00DE0488 /* AppDelegate.h */,
 				4A649E4E201E612D00DE0488 /* AppDelegate.m */,
-				4AC7BCB4201E6241006EBBAA /* CollectionViewController.h */,
-				4AC7BCB5201E6241006EBBAA /* CollectionViewController.m */,
 				4A649E53201E612D00DE0488 /* Main.storyboard */,
 				4A649E56201E612D00DE0488 /* Assets.xcassets */,
 				4A649E58201E612D00DE0488 /* LaunchScreen.storyboard */,
@@ -95,6 +97,17 @@
 				4AC7BCB8201E6430006EBBAA /* CollectionViewCell.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		4AC7BCBF201E915E006EBBAA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4AC7BCB4201E6241006EBBAA /* CollectionViewController.h */,
+				4AC7BCB5201E6241006EBBAA /* CollectionViewController.m */,
+				4AC7BCC0201E921C006EBBAA /* DetailViewController.h */,
+				4AC7BCC1201E921C006EBBAA /* DetailViewController.m */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +186,7 @@
 				4AC7BCBC201E87A2006EBBAA /* Giphy.m in Sources */,
 				4AC7BCB9201E6430006EBBAA /* CollectionViewCell.m in Sources */,
 				4AC7BCB6201E6241006EBBAA /* CollectionViewController.m in Sources */,
+				4AC7BCC2201E921C006EBBAA /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
