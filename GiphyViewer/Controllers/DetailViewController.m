@@ -21,7 +21,24 @@
     if (self.giphy) {
         NSURLRequest *request = [NSURLRequest requestWithURL:self.giphy.animatedURL];
         [self.webView loadRequest:request];
+        [self setupGestures];
+    } else {
+        [self dismiss];
     }
+}
+
+#pragma mark - Gestures
+
+- (void)setupGestures {
+    UITapGestureRecognizer *dismiss = [[UITapGestureRecognizer alloc]
+                                       initWithTarget:self
+                                       action:@selector(dismiss)];
+    dismiss.numberOfTapsRequired = 1;
+    [self.view addGestureRecognizer:dismiss];
+}
+
+- (void)dismiss {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
